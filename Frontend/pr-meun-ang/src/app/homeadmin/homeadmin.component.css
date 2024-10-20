@@ -1,0 +1,122 @@
+
+ 
+ .preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: yellowgreen;
+    z-index: 10;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    transition: 500ms ease;
+  }
+.preload > * { transition: 250ms ease; }
+.preload.loaded > * { opacity: 0; }
+.preload.loaded {
+    transition-delay: 250ms;
+    transform: translateY(100%);
+}
+
+
+.special-dish {
+  margin-bottom: 100px; /* Adds 50px space between the two sections */
+}
+
+.special-dish:last-of-type {
+  margin-bottom: 0; /* Optional: Remove bottom margin for the last section */
+}
+
+.contact-label.text-center {
+  color: #208cb3; /* Remplacez #ff5733 par la couleur de votre choix */
+  text-align: center; /* Assure que le texte reste centré */
+  font-size: 20px; 
+}
+
+
+/* Styles pour la carte modale */
+.card {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color:rgb(50, 192, 205);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.card .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+/* Styles pour l'overlay */
+.overlay {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Afficher la carte et l'overlay lorsque le bouton est cliqué */
+#overlay.active,
+#card.active {
+  display: block;
+}
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  
+
+  background-size: cover; /* Pour couvrir toute la surface du bouton */
+  background-position: center; /* Centrer l'image */
+  max-width: max-content;
+  
+  padding: 12px 45px;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+}
+
+.whatsapp-link img {
+ 
+  margin-right: 10px; /* Espace entre l'image et le texte */
+  width: 220px; /* Ajuster la taille de l'image */
+  height: 90px; /* Ajuster la taille de l'image */
+}
+
+.phone-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.phone-link:hover {
+  background-color: #8e969e;
+}
+
+

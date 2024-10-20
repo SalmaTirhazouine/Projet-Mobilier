@@ -1,0 +1,185 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(0, 0, 0);
+  min-height: 100%;
+  background: #000000; background: -webkit-linear-gradient(to left, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #000000);
+  
+}
+
+a,
+a:focus,
+a:visited {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  color: var(--blueish-font-color);
+}
+
+a:hover {
+  color: var(--font-color);
+}
+
+
+.explanation {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400; 
+}
+
+.explanation h2 {
+  font-size: 3rem;
+  color: var(--blueish-font-color);
+}
+
+.explanation .title {
+  color:rgb(130, 139, 110);;font-size: 9.2rem;
+}
+
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes de taille égale */
+  gap: 15px; /* Espacement entre les cartes */
+  width: 100%;
+  margin: 0 auto;
+  row-gap: 30px; 
+}
+
+.card {
+  width: 100%; /* La carte prend toute la largeur de sa cellule */
+  height: 600px;
+  margin-bottom: 30px; /* Adds space below each card */
+  border-radius: 20px;
+  box-sizing: border-box;
+  
+  transition: 0.4s;
+  cursor: pointer;
+  overflow: hidden;
+  flex-direction: column; 
+}
+
+
+.card .card-image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0; /* Ajuster les coins arrondis */
+  object-fit: cover;
+}
+.product-details { /* Replacing card-body */
+  padding: 15px;
+  background-color: #000000;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+  opacity: 0; /* Cache la description initialement */
+  visibility: hidden; /* Empêche l'interaction avec la description lorsqu'elle est cachée */
+  transform: translateY(20px); /* Déplace la description légèrement vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease
+}
+
+.card:hover .product-details {
+  opacity: 1; /* Affiche la description lors du survol */
+  visibility: visible;
+  transform: translateY(0); /* Remet la description à sa position initiale */
+}
+.product-details h5 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.product-details p {
+  margin: 0 0 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.product-details .btn-success {
+  background-color: #25D366;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  display: flex; /* Utiliser Flexbox pour aligner le contenu */
+  align-items: center; /* Centrer verticalement */
+  justify-content: center; /* Centrer horizontalement */
+  width: 200px;
+  height: 40px;
+ 
+}
+
+
+.card:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 5px 5px 30px 15px rgb(229, 233, 221), -5px -5px 30px 15px rgba(95, 206, 31, 0.22);
+}
+@media (max-width: 900px) {
+  .cards-list {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les écrans moyens */
+  }
+}
+
+@media (max-width: 500px) {
+  .cards-list {
+    grid-template-columns: 1fr; /* Une colonne pour les petits écrans */
+  }
+}
+.slider-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; /* Taille de l'icône */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.slider-btn.prev {
+  left: 10px; /* Positionnement à gauche */
+}
+
+.slider-btn.next {
+  right: 10px; /* Positionnement à droite */
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Ajout d'une légère couleur de fond au survol */
+  border-radius: 50%; /* Rond au survol */
+}
+
+.slider-btn ion-icon {
+  color: #fff; /* Couleur de l'icône */
+  font-size: 32px; /* Taille de l'icône */
+}
+.nav-spacing {margin-top: 40px; 
+  margin-bottom: 90px; /* Ajustez selon vos besoins */
+}

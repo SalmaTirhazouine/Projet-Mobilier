@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h1 class="title">Liste des Rendez-Vous</h1>
+  <table class="table table-striped rendezvous-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom Client</th>
+        <th>Numéro de Téléphone</th>
+        <th>Date</th>
+       
+        <th>Message</th>
+        <th>Actions</th>
+        <th>Validation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rendezvous of rendezvous">
+        <td>{{ rendezvous.id }}</td>
+        <td>{{ rendezvous.nomClient }}</td>
+        <td>{{ rendezvous.numeroTelephone }}</td>
+        <td>{{ rendezvous.date }}</td>
+        
+        <td>{{ rendezvous.message }}</td>
+        <td>
+          <span class="material-icons icon-delete me-2" (click)="delete_RendezVous(rendezvous.id)">
+            delete
+          </span>
+          <!--span class="material-icons icon-view" (click)="viewRendezVous(rendezvous)">
+            visibility
+          </span-->
+          
+        </td>
+        <td>
+          <span class="material-icons icon-validate" 
+                (click)="toggleValidation(rendezvous)" 
+                [ngClass]="{'validated': rendezvous.isValidated}" 
+                style="cursor: pointer;">
+            check_circle
+          </span>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal" [ngClass]="{'is-active': isViewOpen}">
+  <div class="modal-background" (click)="isViewOpen = false"></div>
+  <div class="modal-content">
+    <div class="modal-background" (click)="closeModalAndReturn()">
+      <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Détails du Rendez-Vous</h3>
+              <p>ID: {{ selectedRendezVous?.id }}</p>
+              <p>Nom Client: {{ selectedRendezVous?.nomClient }}</p>
+              <p>Numéro de Téléphone: {{ selectedRendezVous?.numeroTelephone }}</p>
+              <p>Date:{{ selectedRendezVous?.date  }}</p>
+              
+              <p>Message:{{ selectedRendezVous?.message }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" (click)="isViewOpen = false"></button>
+</div>

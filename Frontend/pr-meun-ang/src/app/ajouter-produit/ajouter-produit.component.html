@@ -1,0 +1,78 @@
+<div class="container nav-spacing">
+    <nav class="navbar" data-navbar>
+      <ul class="navbar-list">
+        
+      </ul>
+    </nav>
+  </div>
+  
+  
+  <a href="#contact" class="btn btn-secondary">
+    <span class="text text-1">Ajouter Produit</span>
+    <span class="text text-2" aria-hidden="true">Ajouter</span>
+  </a>
+  
+  <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+    <span class="line line-1"></span>
+    <span class="line line-2"></span>
+    <span class="line line-3"></span>
+  </button>
+    <div class="container mt-5 custom-container">
+        <div class="card-body">
+            <form (ngSubmit)="onsubmit()" #produitForm="ngForm">
+                <div class="form-group">
+                    <label for="nom"></label>
+                    <input type="text" id="nom" name="nom" class="form-control"
+                           [(ngModel)]="produit.nom" placeholder="Nom" required
+                           #nom="ngModel">
+                    <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback">
+                        Le nom est obligatoire.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description"></label>
+                    <textarea id="description" name="description" class="form-control"
+                              [(ngModel)]="produit.description" placeholder="Description" required
+                              #description="ngModel"></textarea>
+                    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback">
+                        La description est obligatoire.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="prix">Prix:</label>
+                    <input type="number" id="prix" name="prix" class="form-control"
+                           [(ngModel)]="produit.prix" placeholder="Prix" required
+                           #prix="ngModel">
+                    <!--div *ngIf="prix.invalid && (prix.dirty || prix.touched)" class="invalid-feedback">
+                        Le prix est obligatoire.
+                    </div-->
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" class="form-control"
+                           [(ngModel)]="produit.imageUrl" placeholder="Image URL" required
+                           #imageUrl="ngModel">
+                    <div *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched)" class="invalid-feedback">
+                        L'URL de l'image est obligatoire.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <img [src]="produit.imageUrl" alt="{{ produit.nom }}" class="img-thumbnail mt-3">
+                </div>
+                <div class="form-group">
+                    <label for="categorie">Catégorie:</label>
+                    <select id="categorie" name="categorie" class="form-control"
+                            [(ngModel)]="produit.categorie"  required #categorie="ngModel">
+                        <option value="" disabled selected>Choisir une catégorie</option>
+                        <option *ngFor="let cat of categories" [ngValue]="cat">{{ cat.nom }}</option>
+                    </select>
+                    <div *ngIf="categorie.invalid && (categorie.dirty || categorie.touched)" class="invalid-feedback">
+                        La catégorie est obligatoire.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" [disabled]="produitForm.invalid">Ajouter</button>
+            </form>
+        </div>
+    </div>
+ 
+ 

@@ -1,0 +1,112 @@
+/* Container */
+.custom-container {
+  margin-top: 40px; /* Espace entre le haut de la page et le formulaire */
+  margin-bottom: 30px; /* Espace entre le formulaire et le footer */
+  padding: 50px;
+  background-color: rgb(255, 255, 255); /* Couleur de fond pour rendre le formulaire distinct */
+  border-radius: 8px; /* Coins arrondis pour un meilleur style */
+  box-shadow: 0px  30px 30px 30px rgba(149, 64, 234, 0.2);
+
+
+ /* Ombre pour distinguer le formulaire */
+  position: relative; /* Assure que le formulaire se place correctement dans le flux du document */
+ /* Positionne le formulaire au-dessus des autres éléments, si nécessaire */
+}
+.container {
+  max-width: 1200px; /* Limite la largeur maximale pour ne pas dépasser les bords */
+  margin: 0 auto; /* Centre le contenu */
+}
+  /* Card */
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(125, 40, 40, 0.1);
+  }
+  
+  /* Card Body */
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Card Title */
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .nav-spacing {margin-top: 40px; 
+    margin-bottom: 90px; /* Ajustez selon vos besoins */
+  }
+  .btn-secondary {
+    display: block;
+    margin: 100px auto 40px; /* Ajustez la valeur du premier chiffre pour l'espace en haut */
+}
+  
+  /* Form Group */
+  .form-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  /* Form Inputs */
+  .form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 2rem;
+  }
+  
+  /* Invalid Input */
+  .form-control.ng-invalid.ng-touched {
+    border-color: #dc3545;
+  }
+  
+  /* Invalid Feedback */
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  /* Image Thumbnail */
+  .img-thumbnail {
+    max-width: 100%;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Submit Button */
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .form-control {
+      font-size: 0.875rem;
+    }
+  
+    .btn-success {
+      font-size: 0.875rem;
+      padding: 8px 16px;
+    }
+  }
+ 
+
+
